@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Enchanted Library of Wonders ✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="magical-particles"></div>
+    <div class="app">
+        <!-- Authentication Section -->
+        <div id="auth-section" class="auth-container">
+            <div class="floating-books">
+                <div class="floating-book book1">📚</div>
+                <div class="floating-book book2">📖</div>
+                <div class="floating-book book3">📜</div>
+                <div class="floating-book book4">🔮</div>
+                <div class="floating-book book5">⭐</div>
+            </div>
+            
+            <div class="auth-castle">
+                <div class="castle-tower left-tower"></div>
+                <div class="castle-tower right-tower"></div>
+                <div class="auth-card">
+                    <div class="ornate-border">
+                        <div class="corner-decoration top-left"></div>
+                        <div class="corner-decoration top-right"></div>
+                        <div class="corner-decoration bottom-left"></div>
+                        <div class="corner-decoration bottom-right"></div>
+                    </div>
+                    
+                    <h1 class="magical-title">
+                        <span class="sparkle">✨</span>
+                        Enchanted Library
+                        <span class="sparkle">✨</span>
+                        <div class="subtitle">~ of Wonders ~</div>
+                    </h1>
+                    
+                    <!-- Login Form -->
+                    <div id="login-form" class="auth-form active">
+                        <h2 class="form-title">Welcome Back, Dear Reader</h2>
+                        <form id="login" class="magical-form">
+                            <div class="form-group enchanted">
+                                <label for="login-email">📧 Magical Email</label>
+                                <input type="email" id="login-email" required class="enchanted-input">
+                                <div class="input-glow"></div>
+                            </div>
+                            <div class="form-group enchanted">
+                                <label for="login-password">🗝️ Secret Incantation</label>
+                                <input type="password" id="login-password" required class="enchanted-input">
+                                <div class="input-glow"></div>
+                            </div>
+                            <button type="submit" class="btn btn-magical">
+                                <span>🌟 Enter the Library 🌟</span>
+                                <div class="btn-sparkles"></div>
+                            </button>
+                        </form>
+                        <p class="auth-switch">
+                            New to our realm? <a href="#" id="show-register" class="magical-link">Create your grimoire</a>
+                        </p>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div id="register-form" class="auth-form">
+                        <h2 class="form-title">Join Our Magical Realm</h2>
+                        <form id="register" class="magical-form">
+                            <div class="form-group enchanted">
+                                <label for="register-username">🧙‍♀️ Wizard Name</label>
+                                <input type="text" id="register-username" required class="enchanted-input">
+                                <div class="input-glow"></div>
+                            </div>
+                            <div class="form-group enchanted">
+                                <label for="register-email">📧 Magical Email</label>
+                                <input type="email" id="register-email" required class="enchanted-input">
+                                <div class="input-glow"></div>
+                            </div>
+                            <div class="form-group enchanted">
+                                <label for="register-password">🗝️ Secret Incantation</label>
+                                <input type="password" id="register-password" required class="enchanted-input">
+                                <div class="input-glow"></div>
+                            </div>
+                            <button type="submit" class="btn btn-magical" id="register-submit-btn">
+                                <span>✨ Create Grimoire ✨</span>
+                                <div class="btn-sparkles"></div>
+                            </button>
+                        </form>
+                        <p class="auth-switch">
+                            Already have a grimoire? <a href="#" id="show-login" class="magical-link">Login here</a>
+                        </p>
+                    </div>
+
+                    <div id="auth-error" class="error magical-error" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Application -->
+        <div id="main-app" class="main-app" style="display: none;">
+            <!-- Magical Header -->
+            <header class="magical-header">
+                <div class="header-ornaments">
+                    <div class="ornament left">🌙</div>
+                    <div class="ornament right">⭐</div>
+                </div>
+                <div class="header-content">
+                    <h1 class="library-title">
+                        <span class="title-decoration">⚜️</span>
+                        My Enchanted Library
+                        <span class="title-decoration">⚜️</span>
+                    </h1>
+                    <div class="user-info magical-user">
+                        <span id="user-welcome" class="welcome-text">Welcome, Wizard!</span>
+                        <button id="logout-btn" class="btn btn-crystal">
+                            <span>🚪 Exit Realm</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="header-glow"></div>
+            </header>
+
+            <!-- Magical Stats Dashboard -->
+            <div class="stats-realm">
+                <div class="stats-container">
+                    <div class="stat-crystal">
+                        <div class="crystal-glow"></div>
+                        <div class="stat-content">
+                            <h3 id="total-books" class="stat-number">0</h3>
+                            <p class="stat-label">📚 Total Tomes</p>
+                        </div>
+                        <div class="crystal-sparkles"></div>
+                    </div>
+                    <div class="stat-crystal reading">
+                        <div class="crystal-glow"></div>
+                        <div class="stat-content">
+                            <h3 id="reading-count" class="stat-number">0</h3>
+                            <p class="stat-label">📖 Currently Reading</p>
+                        </div>
+                        <div class="crystal-sparkles"></div>
+                    </div>
+                    <div class="stat-crystal completed">
+                        <div class="crystal-glow"></div>
+                        <div class="stat-content">
+                            <h3 id="completed-count" class="stat-number">0</h3>
+                            <p class="stat-label">✅ Mastered</p>
+                        </div>
+                        <div class="crystal-sparkles"></div>
+                    </div>
+                    <div class="stat-crystal planned">
+                        <div class="crystal-glow"></div>
+                        <div class="stat-content">
+                            <h3 id="planned-count" class="stat-number">0</h3>
+                            <p class="stat-label">🔮 Future Quests</p>
+                        </div>
+                        <div class="crystal-sparkles"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Magical Controls -->
+            <div class="controls-realm">
+                <button id="add-book-btn" class="btn btn-magical large">
+                    <span>📜 Add New Tome 📜</span>
+                    <div class="btn-sparkles"></div>
+                </button>
+                <div class="filter-controls magical-filter">
+                    <label for="status-filter" class="filter-label">🔍 Filter by Quest:</label>
+                    <select id="status-filter" class="enchanted-select">
+                        <option value="">All Sacred Texts</option>
+                        <option value="reading">📖 Currently Reading</option>
+                        <option value="completed">✅ Mastered Tomes</option>
+                        <option value="plan-to-read">🔮 Future Quests</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Magical Book Form Modal -->
+            <div id="book-modal" class="modal magical-modal" style="display: none;">
+                <div class="modal-backdrop"></div>
+                <div class="modal-content enchanted-scroll">
+                    <div class="scroll-decoration top"></div>
+                    <div class="scroll-decoration bottom"></div>
+                    
+                    <div class="modal-header">
+                        <h3 id="modal-title" class="scroll-title">Add New Tome</h3>
+                        <button id="close-modal" class="close-btn magical-close">✕</button>
+                    </div>
+                    
+                    <form id="book-form" class="magical-form">
+                        <input type="hidden" id="book-id">
+                        <div class="form-group enchanted">
+                            <label for="book-title">📚 Title of the Sacred Text *</label>
+                            <input type="text" id="book-title" required class="enchanted-input">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="form-group enchanted">
+                            <label for="book-author">🧙‍♂️ Wise Author</label>
+                            <input type="text" id="book-author" class="enchanted-input">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="form-group enchanted">
+                            <label for="book-genre">🎭 Mystical Genre</label>
+                            <input type="text" id="book-genre" placeholder="Fantasy, Mystery, Ancient Wisdom..." class="enchanted-input">
+                            <div class="input-glow"></div>
+                        </div>
+                        <div class="form-group enchanted">
+                            <label for="book-status">⚡ Quest Status</label>
+                            <select id="book-status" required class="enchanted-select">
+                                <option value="plan-to-read">🔮 Future Quest</option>
+                                <option value="reading">📖 Currently Reading</option>
+                                <option value="completed">✅ Mastered</option>
+                            </select>
+                        </div>
+                        <div class="form-actions magical-actions">
+                            <button type="submit" class="btn btn-magical">
+                                <span>💫 Save to Library 💫</span>
+                                <div class="btn-sparkles"></div>
+                            </button>
+                            <button type="button" id="cancel-book" class="btn btn-crystal">
+                                <span>🌙 Cancel</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Enchanted Books Realm -->
+            <div class="books-realm">
+                <div id="loading" class="loading magical-loading" style="display: none;">
+                    <div class="loading-crystal">
+                        <div class="crystal-spinner"></div>
+                        <div class="loading-sparkles"></div>
+                    </div>
+                    <p class="loading-text">Summoning your magical tomes...</p>
+                </div>
+                
+                <div id="error" class="error magical-error" style="display: none;"></div>
+                
+                <div id="books-grid" class="books-grid enchanted-library"></div>
+                
+                <div id="empty-state" class="empty-state magical-empty" style="display: none;">
+                    <div class="empty-crystal">💎</div>
+                    <h3>📖 Your Library Awaits</h3>
+                    <p>Begin your magical journey by adding your first enchanted tome!</p>
+                    <button class="btn btn-magical" onclick="bookLibrary.showBookForm()">
+                        <span>✨ Add First Tome ✨</span>
+                        <div class="btn-sparkles"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
